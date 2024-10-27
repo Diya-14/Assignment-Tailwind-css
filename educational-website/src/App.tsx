@@ -9,6 +9,7 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Courses = lazy(() => import('./pages/Courses'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Jobs = lazy(() => import('./pages/Jobs')); // Import Jobs page
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const App: React.FC = () => (
@@ -20,6 +21,8 @@ const App: React.FC = () => (
         <Route path="/about" element={<About />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/contact" element={<Contact />} />
+        {/* No ErrorBoundary needed for Jobs */}
+        <Route path="/jobs" element={<Jobs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
